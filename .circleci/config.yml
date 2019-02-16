@@ -8,9 +8,8 @@ jobs:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+          name: pmd
+          command: |
+            wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.11.0/pmd-bin-6.11.0.zip
+            unzip pmd-bin-6.11.0.zip
+            ./unzip -d . -R ruleset.xml
